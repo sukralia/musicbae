@@ -1,26 +1,68 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Animated gradient background */
+.bg-artist-gradient {
+  background: linear-gradient(120deg, #a21caf, #f472b6, #facc15, #38bdf8, #a21caf);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Glassmorphism card */
+.glass-card {
+  @apply bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl rounded-3xl transition-all duration-300;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+.glass-card:hover {
+  @apply scale-105 bg-white/20 shadow-2xl;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Glowing text */
+.text-glow {
+  text-shadow: 0 0 12px #fff, 0 0 32px #a21caf, 0 0 48px #f472b6;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animated gradient border */
+.animated-border {
+  border-width: 3px;
+  border-image: linear-gradient(90deg, #a21caf, #f472b6, #facc15, #38bdf8, #a21caf) 1;
+  animation: borderMove 3s linear infinite;
+}
+@keyframes borderMove {
+  0% { border-image-source: linear-gradient(90deg, #a21caf, #f472b6, #facc15, #38bdf8, #a21caf); }
+  100% { border-image-source: linear-gradient(270deg, #a21caf, #f472b6, #facc15, #38bdf8, #a21caf); }
+}
+
+/* Neon button */
+.btn-neon {
+  @apply px-10 py-4 rounded-full font-extrabold text-white shadow-xl transition-all duration-300 text-lg tracking-wide;
+  background: linear-gradient(90deg, #a21caf, #f472b6, #facc15, #38bdf8);
+  box-shadow: 0 0 24px #f472b6, 0 0 48px #facc15, 0 0 32px #38bdf8;
+  border: none;
+  letter-spacing: 0.05em;
+}
+.btn-neon:hover {
+  filter: brightness(1.2) saturate(1.7);
+  box-shadow: 0 0 48px #a21caf, 0 0 64px #f472b6, 0 0 48px #38bdf8;
+  transform: scale(1.07) rotate(-1deg);
+}
+
+/* For animated floating icons */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom font for headings */
+.font-artist {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
 }
