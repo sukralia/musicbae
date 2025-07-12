@@ -128,11 +128,7 @@ export default function LoginPage() {
                 disabled={isLoading}
                 className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isLoading ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                ) : (
-                  'Sign In'
-                )}
+                {isLoading ? <div className="music-spinner"></div> : 'Sign In'}
               </button>
             </form>
 

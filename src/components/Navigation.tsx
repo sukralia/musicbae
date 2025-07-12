@@ -23,18 +23,26 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/artists" className="text-white/80 hover:text-white transition-colors">
-              Artists
-            </Link>
-            <Link href="/about" className="text-white/80 hover:text-white transition-colors">
-              About
-            </Link>
-            <Link href="/faqs" className="text-white/80 hover:text-white transition-colors">
-              FAQs
-            </Link>
-            <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
-              Contact
-            </Link>
+            <motion.div whileHover={{ y: -2 }}>
+              <Link href="/artists" className="text-white/80 hover:text-white transition-colors">
+                Artists
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -2 }}>
+              <Link href="/about" className="text-white/80 hover:text-white transition-colors">
+                About
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -2 }}>
+              <Link href="/faqs" className="text-white/80 hover:text-white transition-colors">
+                FAQs
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -2 }}>
+              <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
+                Contact
+              </Link>
+            </motion.div>
             
             {isLoggedIn ? (
               <div className="flex items-center space-x-4">

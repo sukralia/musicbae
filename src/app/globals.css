@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url('/sound-wave.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
 /* Animated gradient background */
 .bg-artist-gradient {
   background: linear-gradient(120deg, #a21caf, #f472b6, #facc15, #38bdf8, #a21caf);
@@ -20,6 +27,7 @@
 }
 .glass-card:hover {
   @apply scale-105 bg-white/20 shadow-2xl;
+  transform: rotateY(5deg);
 }
 
 /* Glowing text */
@@ -50,6 +58,19 @@
   filter: brightness(1.2) saturate(1.7);
   box-shadow: 0 0 48px #a21caf, 0 0 64px #f472b6, 0 0 48px #38bdf8;
   transform: scale(1.07) rotate(-1deg);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.07) rotate(-1deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1.07) rotate(-1deg);
+  }
 }
 
 /* For animated floating icons */
@@ -65,4 +86,55 @@
 .font-artist {
   font-family: 'Poppins', 'Inter', sans-serif;
   letter-spacing: 0.03em;
+}
+
+/* Custom loading spinner */
+.music-spinner {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.music-spinner::after,
+.music-spinner::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #f472b6;
+  width: 6px;
+  height: 6px;
+  transform: translate(150%, 150%);
+  border-radius: 50%;
+}
+.music-spinner::before {
+  left: auto;
+  right: 0;
+  background: #38bdf8;
+  transform: translate(-150%, 150%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
