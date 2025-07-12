@@ -27,10 +27,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-artist-gradient flex flex-col items-center justify-center px-4 py-12">
+    <div className="flex flex-col items-center justify-center px-4 py-12">
+      <Navigation />
       <div className="w-full max-w-6xl mx-auto text-center space-y-16">
         {/* Hero Section */}
-        <section className="pt-16 pb-8">
+        <section className="pt-32 pb-8">
           <h1 className="text-7xl md:text-8xl font-artist font-extrabold text-white text-glow mb-6 drop-shadow-2xl animate-float">
             MusicBae
           </h1>

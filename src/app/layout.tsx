@@ -34,11 +34,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`bg-red-500 ${inter.className} ${poppins.variable} font-sans`}>
-        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-pink-900">
-          {children}
-        </div>
+    <html lang="en" className="h-full">
+      <body className={`${inter.className} ${poppins.variable} font-sans min-h-full bg-artist-gradient text-white`}>
+        {children}
         <Toaster 
           position="top-right"
           toastOptions={{
