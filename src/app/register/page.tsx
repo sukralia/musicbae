@@ -223,7 +223,7 @@ export default function RegisterPage() {
                 className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <div className="music-spinner"></div>
                 ) : (
                   <>
                     {selectedRole === 'artist' ? <Music className="w-5 h-5" /> : <Heart className="w-5 h-5" />}

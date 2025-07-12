@@ -97,7 +97,7 @@ export default function ArtistsPage() {
         <div className="pt-20 pb-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center h-64">
-              <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+              <div className="music-spinner"></div>
             </div>
           </div>
         </div>
